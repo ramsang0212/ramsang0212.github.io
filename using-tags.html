@@ -32,7 +32,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="Ramssang World 람" />
+    <meta property="og:site_name" content="RamSang World" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Organising your content with tags" />
     <meta property="og:description" content="Ghost has a single, powerful organisational taxonomy, called tags. It doesn't matter whether you want to call them categories, tags, boxes, or anything else. You can think of Ghost tags a lot like Gmail labels. By tagging posts with one or more keyword, you can organise articles into buckets of" />
@@ -49,7 +49,7 @@
     <meta name="twitter:url" content="https://ramsang0212.github.io/" />
     <meta name="twitter:image" content="https://ramsang0212.github.io/assets/images/tags.jpg" />
     <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Ramssang World 람" />
+    <meta name="twitter:data1" content="RamSang World" />
     <meta name="twitter:label2" content="Filed under" />
     <meta name="twitter:data2" content="Getting Started" />
     <meta name="twitter:site" content="@" />
@@ -63,7 +63,7 @@
     "@type": "Website",
     "publisher": {
         "@type": "Organization",
-        "name": "Ramssang World 람",
+        "name": "RamSang World",
         "logo": "https://ramsang0212.github.io/"
     },
     "url": "https://ramsang0212.github.io/using-tags",
@@ -109,7 +109,7 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-left">
         
             
-                <a class="site-nav-logo" href="https://ramsang0212.github.io">Ramssang World 람</a>
+                <a class="site-nav-logo" href="https://ramsang0212.github.io">RamSang World</a>
             
         
         
@@ -117,7 +117,8 @@ into the {body} of the default.hbs template -->
     <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
     <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
     <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li>
-    <li class="nav-try-ghost" role="menuitem"><a href="https://ghost.org">Try Ghost</a></li>
+    <li class="nav-ram" role="menuitem"><a href="/tag/angular/">Angular</a></li>
+    <!-- <li class="nav-try-ghost" role="menuitem"><a href="https://ghost.org">Try Ghost</a></li> -->
 </ul>
 
         
@@ -183,13 +184,28 @@ into the {body} of the default.hbs template -->
 <p>Here, the theme would assign the post publicly displayed tags of <code>News</code>, and <code>Cycling</code> - but it would also keep a private record of the post being tagged with <code>#video</code>.</p>
 <p>In your theme, you could then look for private tags conditionally and give them special formatting:</p>
 
-<pre><code class="nohighlight">{{#post}}
-    {{#has tag=&quot;#video&quot;}}
-        ...markup for a nice big video post layout...
-    {{else}}
-        ...regular markup for a post...
-    {{/has}}
-{{/post}}
+<div class="language-javascript highlighter-rouge">
+    <div class="highlight">
+        <div class="highlight">
+                <code class="hljs javascript">
+                    function syntaxHighlight(code) {
+                        var foo = 'Hello World';
+                        var bar = 100;
+                    }
+                </code>
+        </div>
+    </div>
+</div>
+<code class="hljs javascript"><span class="kd"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> </span><span class="nx"><span class="hljs-function"><span class="hljs-title">syntaxHighlight</span></span></span><span class="p"><span class="hljs-function">(</span></span><span class="nx"><span class="hljs-function"><span class="hljs-params">code</span></span></span><span class="p"><span class="hljs-function">)</span></span><span class="hljs-function"> </span><span class="p">{</span>
+    <span class="kd"><span class="hljs-keyword">var</span></span> <span class="nx">foo</span> <span class="o">=</span> <span class="s1"><span class="hljs-string">'Hello World'</span></span><span class="p">;</span>
+    <span class="kd"><span class="hljs-keyword">var</span></span> <span class="nx">bar</span> <span class="o">=</span> <span class="mi"><span class="hljs-number">100</span></span><span class="p">;</span>
+ <span class="p">}</span>
+ </code>
+<pre><code class="highlight">
+        function syntaxHighlight(code) {
+            var foo = 'Hello World';
+            var bar = 100;
+         }
 </code></pre>
 <p>You can find documentation for theme development techniques like this and many more over on Ghost's extensive <a href="https://themes.ghost.org/">theme documentation</a>.</p>
 
@@ -200,7 +216,7 @@ into the {body} of the default.hbs template -->
             <!-- Email subscribe form at the bottom of the page -->
             
                 <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">Subscribe to Ramssang World 람</h3>
+                    <h3 class="subscribe-form-title">Subscribe to RamSang World</h3>
                     <p>Get the latest posts delivered right to your inbox</p>
                     <form method="post" action="/subscribe/" class="">
     <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
@@ -218,6 +234,8 @@ into the {body} of the default.hbs template -->
             <footer class="post-full-footer">
                 <!-- Everything inside the #author tags pulls data from the author -->
                 <!-- #author-->
+                
+                    
                 
                     
                         <section class="author-card">
@@ -260,7 +278,7 @@ into the {body} of the default.hbs template -->
                     <script>
                         var disqus_config = function () {
                             this.page.url = 'https://ramsang0212.github.io/';
-                            this.page.identifier = 'Ramssang World 람';
+                            this.page.identifier = 'RamSang World';
                         };
                         (function() {
                             var d = document, s = d.createElement('script');
@@ -292,7 +310,7 @@ into the {body} of the default.hbs template -->
                         
                     >
                         <header class="read-next-card-header">
-                            <small class="read-next-card-header-sitetitle">&mdash; Ramssang World 람 &mdash;</small>
+                            <small class="read-next-card-header-sitetitle">&mdash; RamSang World &mdash;</small>
                             
                                 <h3 class="read-next-card-header-title"><a href="/tag/getting-started/">Getting started</a></h3>
                             
@@ -304,12 +322,7 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/welcome">Welcome to Ghost</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
@@ -337,6 +350,8 @@ into the {body} of the default.hbs template -->
                                   
                                     
                                         
+                                        
+                                            <li><a href="/private-sites">Making your site private</a></li>
                                         
                                     
                                   
@@ -376,7 +391,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/getting-started/">
                                 
-                                    See all 6 posts  →
+                                    See all 5 posts  →
                                 
                             </a>
                         </footer>
@@ -411,6 +426,8 @@ into the {body} of the default.hbs template -->
                 </section>
             </a>
             <footer class="post-card-meta">
+                
+                    
                 
                     
                         
@@ -468,6 +485,8 @@ into the {body} of the default.hbs template -->
             <footer class="post-card-meta">
                 
                     
+                
+                    
                         
                         <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
                         
@@ -503,7 +522,7 @@ into the {body} of the default.hbs template -->
     <div class="floating-header-logo">
         <a href="https://ramsang0212.github.io/">
             
-            <span>Ramssang World 람</span>
+            <span>RamSang World</span>
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
@@ -543,7 +562,7 @@ into the {body} of the default.hbs template -->
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="https://ramsang0212.github.io/">Ramssang World 람</a> &copy; 2018</section>
+                <section class="copyright"><a href="https://ramsang0212.github.io/">RamSang World</a> &copy; 2018</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
@@ -564,7 +583,7 @@ into the {body} of the default.hbs template -->
             <a class="subscribe-overlay-close" href="#"></a>
             <div class="subscribe-overlay-content">
                 
-                <h1 class="subscribe-overlay-title">Subscribe to Ramssang World 람</h1>
+                <h1 class="subscribe-overlay-title">Subscribe to RamSang World</h1>
                 <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
                 <form method="post" action="/subscribe/" class="">
     <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
