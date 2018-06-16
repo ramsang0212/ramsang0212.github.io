@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://ramsang0212.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ramsang0212.github.io/" rel="alternate" type="text/html" /><updated>2018-06-16T13:07:49+09:00</updated><id>https://ramsang0212.github.io/</id><title type="html">RamSang World</title><subtitle>if ( IT || WEB || APP ) { WELCOME }</subtitle><entry><title type="html">Angular Study Chapter01 - CLI로 빠르게 시작하기</title><link href="https://ramsang0212.github.io/angular-study-01" rel="alternate" type="text/html" title="Angular Study Chapter01 - CLI로 빠르게 시작하기" /><published>2018-06-06T17:00:00+09:00</published><updated>2018-06-06T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-01</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-01">&lt;p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://ramsang0212.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ramsang0212.github.io/" rel="alternate" type="text/html" /><updated>2018-06-16T13:38:03+09:00</updated><id>https://ramsang0212.github.io/</id><title type="html">RamSang World</title><subtitle>if ( IT || WEB || APP ) { WELCOME }</subtitle><entry><title type="html">Angular Study Chapter 01 - CLI로 빠르게 시작하기</title><link href="https://ramsang0212.github.io/angular-study-01" rel="alternate" type="text/html" title="Angular Study Chapter 01 - CLI로 빠르게 시작하기" /><published>2018-06-06T17:00:00+09:00</published><updated>2018-06-06T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-01</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-01">&lt;p&gt;
     &lt;h2 style=&quot;color: plum&quot; id=&quot;basictagging&quot;&gt;Angular 강좌 목록&lt;/h2&gt;
     &lt;ul class=&quot;table-of-contents-list&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter 01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;h2 id=&quot;basictagging&quot;&gt;Angular CLI를 이용해 빠르게 시작하기&lt;/h2&gt;&lt;/p&gt;
-&lt;p&gt;이번 챕터에서는 CLI를 이용해 Angular를 실행시켜보기 위해서 필요한 설치와 명령어를 통해 실행시켜보도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;이번 장에서는 CLI를 이용해 Angular를 실행시켜보는 데 필요한 설치와 명령어를 통해 실행시켜보도록 하겠습니다.&lt;/p&gt;
 &lt;blockquote&gt;
     &lt;p&gt;&lt;strong&gt;AngularJS? Angular?&lt;/strong&gt;&lt;/p&gt;
     &lt;p&gt; AngularJS =&gt; 1.x Version &lt;/p&gt;
@@ -34,23 +34,23 @@
 
 &lt;h2&gt;Angular CLI 시작하기 네 번째&lt;/h2&gt;
 &lt;p&gt;
-    열어둔 프롬프트에서 &lt;code&gt;cd [foldername]&lt;/code&gt;명령어를 통해 프로젝트폴더로 이동하고 &lt;code&gt;ng serve&lt;/code&gt; 명령어 입력하기
-    &lt;br&gt;&lt;mark&gt;명령 프롬프트에서 빨간색 네모안에 주소를 입력하면 처음 시작된 Angular 프로젝트를 확인할 수 있다.&lt;/mark&gt;
+    열어둔 프롬프트에서 &lt;code&gt;cd [foldername]&lt;/code&gt;명령어를 통해 프로젝트 폴더로 이동하고 &lt;code&gt;ng serve&lt;/code&gt; 명령어 입력하기
+    &lt;br&gt;&lt;mark&gt;명령 프롬프트에서 빨간색 네모 안에 주소를 입력하면 처음 시작된 Angular 프로젝트를 확인할 수 있다.&lt;/mark&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;../assets/images/ng_serve.png&quot;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;../assets/images/ng_serve_first_page.png&quot;/&gt;&lt;/p&gt;
 
 
-&lt;h2&gt;이상으로 Chapter01을 마치겠습니다.&lt;/h2&gt;
+&lt;h2&gt;Good Bye Chapter 01&lt;/h2&gt;
 &lt;p&gt;Next Chapter....&lt;/p&gt;
 &lt;blockquote&gt;
-    &lt;strong&gt;Chapter02&lt;/strong&gt;
+    &lt;strong&gt;Chapter 02&lt;/strong&gt;
     &lt;ul&gt;
         &lt;li&gt;CLI로 만들어진 Angular 프로젝트 구조보기&lt;/li&gt;
         &lt;li&gt;간단하게 화면에 Hello World 찍어보기&lt;/li&gt;
     &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter01 - CLI로 빠르게 시작하기</summary></entry><entry><title type="html">A Full and Comprehensive Style Test</title><link href="https://ramsang0212.github.io/a-full-and-comprehensive-style-test" rel="alternate" type="text/html" title="A Full and Comprehensive Style Test" /><published>2012-09-01T19:00:00+09:00</published><updated>2012-09-01T19:00:00+09:00</updated><id>https://ramsang0212.github.io/a-full-and-comprehensive-style-test</id><content type="html" xml:base="https://ramsang0212.github.io/a-full-and-comprehensive-style-test">&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기</summary></entry><entry><title type="html">A Full and Comprehensive Style Test</title><link href="https://ramsang0212.github.io/a-full-and-comprehensive-style-test" rel="alternate" type="text/html" title="A Full and Comprehensive Style Test" /><published>2012-09-01T19:00:00+09:00</published><updated>2012-09-01T19:00:00+09:00</updated><id>https://ramsang0212.github.io/a-full-and-comprehensive-style-test</id><content type="html" xml:base="https://ramsang0212.github.io/a-full-and-comprehensive-style-test">&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
 
 
 &lt;hr /&gt;
