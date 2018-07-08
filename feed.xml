@@ -1,8 +1,133 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://ramsang0212.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ramsang0212.github.io/" rel="alternate" type="text/html" /><updated>2018-07-08T14:07:30+09:00</updated><id>https://ramsang0212.github.io/</id><title type="html">RamSang World</title><subtitle>if ( IT || WEB || APP ) { WELCOME }</subtitle><entry><title type="html">Angular Study Chapter 02 - Angular 파일구조 및 화면에 Hello World 찍어보기</title><link href="https://ramsang0212.github.io/angular-study-02" rel="alternate" type="text/html" title="Angular Study Chapter 02 - Angular 파일구조 및 화면에 Hello World 찍어보기" /><published>2018-06-15T17:00:00+09:00</published><updated>2018-06-15T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-02</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-02">&lt;p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://ramsang0212.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ramsang0212.github.io/" rel="alternate" type="text/html" /><updated>2018-07-08T15:27:12+09:00</updated><id>https://ramsang0212.github.io/</id><title type="html">RamSang World</title><subtitle>if ( IT || WEB || APP ) { WELCOME }</subtitle><entry><title type="html">Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기</title><link href="https://ramsang0212.github.io/angular-study-03" rel="alternate" type="text/html" title="Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기" /><published>2018-06-22T17:00:00+09:00</published><updated>2018-06-22T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-03</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-03">&lt;p&gt;
     &lt;h2 style=&quot;color: plum&quot; id=&quot;basictagging&quot;&gt;Angular 강좌 목록&lt;/h2&gt;
     &lt;ul class=&quot;table-of-contents-list&quot;&gt;
             &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter 01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href=&quot;./angular-study-02&quot;&gt;Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;./angular-study-03&quot;&gt;Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;h2 id=&quot;basictagging&quot;&gt;Angular 애플리케이션의 구성 요소 알아보기&lt;/h2&gt;&lt;/p&gt;
+&lt;p&gt;이번 장에서는 Angular 애플리케이션을 구성하는 요소인 모듈, 컴포넌트, 디렉티브, 데이터 바인딩 기초를 간단하게 살펴보면서 코드를 분석해보겠습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+    &lt;h2&gt;&lt;li&gt;
+        모듈(Module)     
+    &lt;/li&gt;&lt;/h2&gt;
+    &lt;p&gt;
+        모듈은 관련된 구성요소(컴포넌트나 서비스, 디렉티브 등)를 편하게 사용하기 위해 하나로 모은 것이다.
+        &lt;br&gt;작은 애플리케이션에서는 모든 엘리먼트가 하나의 모듈(루트 모듈)에 속할 수도 있고, 더 큰 앱에서는 여러 개의 모듈이 있을 수도 있다.
+        &lt;br&gt;루트 모듈은 앱을 실행하는 데 필요하기 때문에 모든 앱에 반드시 존재하며 애플리케이션의 시작점이 된다.
+        &lt;br&gt;문법을 보면, 모듈은 클래스에 &lt;code&gt;@NgModule&lt;/code&gt; 어노테이션을 붙여서 지정하고, 이 어노테이션 안에서 모듈 내용을 설정한다.
+        &lt;br&gt;&lt;br&gt;모듈 선언은 아래와 같다.
+    &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;declarations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AppComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;BrowserModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;bootstrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AppComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AppModule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;    
+    &lt;blockquote&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;p&gt;
+                        &lt;code&gt;declarations: [AppComponent]&lt;/code&gt; - AppModule(루트 모듈)에 AppComponent를 선언하면 애플리케이션 전역에서 AppComponent를 사용할 수 있다.
+                    &lt;/p&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;p&gt;&lt;code&gt;imports: [BrowserModule]&lt;/code&gt; - BrowserModule은 브라우저 환경에서 동작하는 애플리케이션을 위한 필수 기능을 제공하는 모듈로서 브라우저에서 동작하는 웹 애플리케이션의 경우, 반드시 BrowserModule을 임포트하여야 한다. BrowserModule은 NgIf 및 NgFor와 같은 빌트인 디렉티브와 빌트인 파이프를 제공하는 CommonModule을 내부에서 import한다. 따라서 BrowserModule을 import하면 별도의 추가적인 import없이 CommonModule을 사용할 수 있게 되어 모든 애플리케이션의 컴포넌트 템플릿에서 빌트인 디렉티브와 빌트인 파이프를 사용할 수 있다.&lt;/p&gt;                    
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;p&gt;
+                        &lt;code&gt;bootstrap: [AppComponent]&lt;/code&gt; - 애플리케이션을 실행하면 @NgModule 어노테이션의 bootstrap으로 지정된 AppComponent가 루트 컴포넌트로 렌더링된다.
+                    &lt;/p&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;    
+    &lt;/blockquote&gt;    
+    &lt;p&gt;
+        루트 애플리케이션을 실행하려면 bootstrapModule 모듈을 실행해야한다.
+        &lt;br&gt;&lt;code&gt;main.ts에 보면 platformBrowserDynamic().bootstrapModule(AppModule)&lt;/code&gt;
+        &lt;br&gt;작성한 앱 모듈은 바로 로드할 수도 있고, 라우터를 사용하는 경우에는 지연 로딩을 할 수도 있다. 
+        &lt;br&gt;Angular 모듈에 대해 더 자세히 알고 싶다면 &lt;a href=&quot;https://angular.io/docs/ts/latest/guide/ngmodule.html&quot; target=&quot;_blank&quot;&gt;Angular 가이드 문서&lt;/a&gt;를 참고하자.
+    &lt;/p&gt;
+    &lt;br&gt;
+    &lt;h2&gt;@NgModule 어노테이션의 메타데이터&lt;/h2&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Provider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;declarations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;|&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;|&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ModuleWithProviders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;|&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;entryComponents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;|&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;bootstrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;|&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;schemas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SchemaMetadata&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;    
+    
+    &lt;table&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th&gt;프로퍼티&lt;/th&gt;
+                &lt;th&gt;내용&lt;/th&gt;                    
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;providers&lt;/td&gt;
+                &lt;td&gt;주입 가능한 객체(injectable object) 즉 서비스의 리스트를 선언한다. 루트 모듈에 선언된 서비스는 애플리케이션 전역에서 사용할 수 있다.&lt;/td&gt;
+            &lt;/tr&gt;                
+                &lt;td&gt;declarations&lt;/td&gt;
+                &lt;td&gt;컴포넌트, 디렉티브, 파이프의 리스트를 선언한다. 모듈에 선언된 구성 요소는 모듈에서 사용할 수 있다.&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;imports&lt;/td&gt;
+                &lt;td&gt;의존 관계에 있는 Angular 라이브러리 모듈, 기능 모듈(Feature module)이라 불리는 하위 모듈, 라우팅 모듈, 서드 파티 모듈을 선언한다.&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;bootstrap&lt;/td&gt;
+                &lt;td&gt;루트 모듈에서 사용하는 프로퍼티로서 애플리케이션의 진입점(entry point)인 루트 컴포넌트를 선언한다.&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;h2&gt;&lt;li&gt;
+        컴포넌트(Component)     
+    &lt;/li&gt;&lt;/h2&gt;
+    &lt;p&gt;
+        
+    &lt;/p&gt;
+    &lt;h2&gt;&lt;li&gt;
+        디렉티브(Directive)     
+    &lt;/li&gt;&lt;/h2&gt;
+    &lt;p&gt;
+        
+    &lt;/p&gt;
+    &lt;h2&gt;&lt;li&gt;
+        데이터 바인딩 기초     
+    &lt;/li&gt;&lt;/h2&gt;
+    &lt;p&gt;
+        
+    &lt;/p&gt;    
+&lt;/ol&gt;
+
+
+
+&lt;h2&gt;Good Bye Chapter 03&lt;/h2&gt;
+&lt;p&gt;Next Chapter....&lt;/p&gt;
+&lt;blockquote&gt;
+    &lt;strong&gt;Chapter 04&lt;/strong&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Angular 라우터 알아보기&lt;/li&gt;
+        &lt;ul&gt;
+            &lt;li&gt;라우터로 데이터 전달&lt;/li&gt;
+            &lt;li&gt;자식 라우팅&lt;/li&gt;
+            &lt;li&gt;라우팅 가드&lt;/li&gt;
+            &lt;li&gt;여러개 라우팅 영역 다루기&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/ul&gt;
+&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기 Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기 Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기</summary></entry><entry><title type="html">Angular Study Chapter 02 - Angular 파일구조 및 화면에 Hello World 찍어보기</title><link href="https://ramsang0212.github.io/angular-study-02" rel="alternate" type="text/html" title="Angular Study Chapter 02 - Angular 파일구조 및 화면에 Hello World 찍어보기" /><published>2018-06-15T17:00:00+09:00</published><updated>2018-06-15T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-02</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-02">&lt;p&gt;
+    &lt;h2 style=&quot;color: plum&quot; id=&quot;basictagging&quot;&gt;Angular 강좌 목록&lt;/h2&gt;
+    &lt;ul class=&quot;table-of-contents-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter 01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;./angular-study-02&quot;&gt;Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;./angular-study-03&quot;&gt;Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/p&gt;
 
@@ -213,11 +338,12 @@
         &lt;li&gt;Angular 애플리케이션의 구성 요소 알아보기&lt;/li&gt;
         &lt;li&gt;모듈(Module), 컴포넌트(Component), 디렉티브(Directive), 데이터 바인딩 기초&lt;/li&gt;
     &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기 Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기</summary></entry><entry><title type="html">Angular Study Chapter 01 - CLI로 빠르게 시작하기</title><link href="https://ramsang0212.github.io/angular-study-01" rel="alternate" type="text/html" title="Angular Study Chapter 01 - CLI로 빠르게 시작하기" /><published>2018-06-06T17:00:00+09:00</published><updated>2018-06-06T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-01</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-01">&lt;p&gt;
+&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기 Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기 Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기</summary></entry><entry><title type="html">Angular Study Chapter 01 - CLI로 빠르게 시작하기</title><link href="https://ramsang0212.github.io/angular-study-01" rel="alternate" type="text/html" title="Angular Study Chapter 01 - CLI로 빠르게 시작하기" /><published>2018-06-06T17:00:00+09:00</published><updated>2018-06-06T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-01</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-01">&lt;p&gt;
     &lt;h2 style=&quot;color: plum&quot; id=&quot;basictagging&quot;&gt;Angular 강좌 목록&lt;/h2&gt;
     &lt;ul class=&quot;table-of-contents-list&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter 01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;./angular-study-02&quot;&gt;Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;./angular-study-03&quot;&gt;Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/p&gt;
 
@@ -266,7 +392,7 @@
         &lt;li&gt;CLI로 만들어진 Angular 프로젝트 구조보기&lt;/li&gt;
         &lt;li&gt;간단하게 화면에 Hello World 찍어보기&lt;/li&gt;
     &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기 Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기</summary></entry><entry><title type="html">A Full and Comprehensive Style Test</title><link href="https://ramsang0212.github.io/a-full-and-comprehensive-style-test" rel="alternate" type="text/html" title="A Full and Comprehensive Style Test" /><published>2012-09-01T19:00:00+09:00</published><updated>2012-09-01T19:00:00+09:00</updated><id>https://ramsang0212.github.io/a-full-and-comprehensive-style-test</id><content type="html" xml:base="https://ramsang0212.github.io/a-full-and-comprehensive-style-test">&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기 Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기 Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기</summary></entry><entry><title type="html">A Full and Comprehensive Style Test</title><link href="https://ramsang0212.github.io/a-full-and-comprehensive-style-test" rel="alternate" type="text/html" title="A Full and Comprehensive Style Test" /><published>2012-09-01T19:00:00+09:00</published><updated>2012-09-01T19:00:00+09:00</updated><id>https://ramsang0212.github.io/a-full-and-comprehensive-style-test</id><content type="html" xml:base="https://ramsang0212.github.io/a-full-and-comprehensive-style-test">&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
 
 
 &lt;hr /&gt;
