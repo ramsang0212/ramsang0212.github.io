@@ -1,7 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://ramsang0212.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ramsang0212.github.io/" rel="alternate" type="text/html" /><updated>2018-06-16T13:45:54+09:00</updated><id>https://ramsang0212.github.io/</id><title type="html">RamSang World</title><subtitle>if ( IT || WEB || APP ) { WELCOME }</subtitle><entry><title type="html">Angular Study Chapter 01 - CLI로 빠르게 시작하기</title><link href="https://ramsang0212.github.io/angular-study-01" rel="alternate" type="text/html" title="Angular Study Chapter 01 - CLI로 빠르게 시작하기" /><published>2018-06-06T17:00:00+09:00</published><updated>2018-06-06T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-01</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-01">&lt;p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://ramsang0212.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ramsang0212.github.io/" rel="alternate" type="text/html" /><updated>2018-07-08T14:07:30+09:00</updated><id>https://ramsang0212.github.io/</id><title type="html">RamSang World</title><subtitle>if ( IT || WEB || APP ) { WELCOME }</subtitle><entry><title type="html">Angular Study Chapter 02 - Angular 파일구조 및 화면에 Hello World 찍어보기</title><link href="https://ramsang0212.github.io/angular-study-02" rel="alternate" type="text/html" title="Angular Study Chapter 02 - Angular 파일구조 및 화면에 Hello World 찍어보기" /><published>2018-06-15T17:00:00+09:00</published><updated>2018-06-15T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-02</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-02">&lt;p&gt;
+    &lt;h2 style=&quot;color: plum&quot; id=&quot;basictagging&quot;&gt;Angular 강좌 목록&lt;/h2&gt;
+    &lt;ul class=&quot;table-of-contents-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter 01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;./angular-study-02&quot;&gt;Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;h2 id=&quot;basictagging&quot;&gt;Angular 파일구조 및 화면에 Hello World 찍어보기&lt;/h2&gt;&lt;/p&gt;
+&lt;p&gt;이번 장에서는 CLI를 이용해 만든 Angular 파일 구조를 살펴보면서 화면에 Hello World가 나오도록 수정해보겠습니다.&lt;/p&gt;
+&lt;p&gt;Angular CLI를 사용하여 프로젝트를 생성하면 아래와 같은 파일 구조의 스캐폴딩이 생성됩니다.&lt;/p&gt;      
+&lt;pre&gt;
+        
+        │  .editorconfig
+        │  .gitignore
+        │  angular.json
+        │  package-lock.json
+        │  package.json
+        │  README.md
+        │  tsconfig.json
+        │  tslint.json
+        │  
+        ├─e2e
+        │  │  protractor.conf.js
+        │  │  tsconfig.e2e.json
+        │  │  
+        │  └─src
+        │          app.e2e-spec.ts
+        │          app.po.ts
+        │          
+        ├─node_modules
+        │  
+        │                  
+        └─src
+            │  browserslist
+            │  favicon.ico
+            │  index.html
+            │  karma.conf.js
+            │  main.ts
+            │  polyfills.ts
+            │  styles.css
+            │  test.ts
+            │  tsconfig.app.json
+            │  tsconfig.spec.json
+            │  tslint.json
+            │  
+            ├─app
+            │      app.component.css
+            │      app.component.html
+            │      app.component.spec.ts
+            │      app.component.ts
+            │      app.module.ts
+            │      
+            ├─assets
+            │      
+            └─environments
+                    environment.prod.ts
+                    environment.ts
+        
+&lt;/pre&gt;
+&lt;hr /&gt;
+
+&lt;ol&gt;
+    &lt;h2&gt;&lt;li&gt;
+        src 폴더        
+    &lt;/li&gt;&lt;/h2&gt;
+    &lt;br&gt;&lt;p&gt;Angular 프로젝트는 컴포넌트, 디렉티브, 서비스, 모듈 등 Angular 구성요소와 각종 설정 파일로 구성된다.
+            src 폴더는 Angular의 모든 구성요소, 공통 CSS, 이미지나 폰트와 같은 정적 파일, 설정 파일 등 애플리케이션 필수 파일을 담고 있다.&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;h3&gt;browserslist&lt;/h3&gt;                            
+            &lt;p&gt;&lt;dd&gt;Autoprefixer, babel과 같은 프런트엔드 도구 간에 적용 대상 브라우저를 공유하는 &lt;a href=&quot;https://github.com/browserslist/browserslist&quot;&gt;browserslist&lt;/a&gt; 라이브러리 설정 파일이다.&lt;/dd&gt;&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;h3&gt;favicon.ico&lt;/h3&gt;   
+            &lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%B9%84%EC%BD%98&quot; target=&quot;_blank&quot;&gt;파비콘&lt;/a&gt;(영어: favicon, 'favorites + icon') 또는 패비콘이란 인터넷 웹 브라우저의 주소창에 표시되는 웹사이트나 웹페이지를 대표하는 아이콘이다.&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;h3&gt;index.html&lt;/h3&gt;
+            &lt;p&gt;웹 애플리케이션에 방문시 처음으로 로딩되는 디폴트 페이지로 &lt;code&gt;angular.json&lt;/code&gt;에서 디폴트 페이지 변경 가능하다.
+             &lt;br&gt;body 태그 안에 &lt; app-root &gt;&lt; /app-root &gt; 태그는 루트 컴포넌트(&lt;code&gt;app.component.ts&lt;/code&gt;)의 셀렉터인 &lt;code&gt;'app-root'&lt;/code&gt;에 의해 루트 컴포넌트의 뷰가 로드되어 브라우저에 표시된다.
+             &lt;br&gt;빌드 시에는 번들링된 자바스크립트 파일이 자동 추가된 index.html이 /dist 폴더에 생성된다.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;               
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;HelloRamsang&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;base&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image/x-icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;favicon.ico&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;app-root&amp;gt;&amp;lt;/app-root&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;h3&gt;karma.conf.js&lt;/h3&gt;   
+            &lt;p&gt;&lt;a href=&quot;https://karma-runner.github.io/1.0/index.html&quot; target=&quot;_blank&quot;&gt;Karma test runner&lt;/a&gt;를 위한 설정 파일로 ng test 명령 실행시 참조된다.&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;h3&gt;main.ts&lt;/h3&gt; 
+            &lt;p&gt;프로젝트의 메인 진입점으로 &lt;code&gt;platformBrowserDynamic().bootstrapModule(AppModule)&lt;/code&gt;을 통해 처음 실행될 루트 모듈을 정한다.&lt;/p&gt;  
+        &lt;/li&gt;        
+        &lt;li&gt;
+            &lt;h3&gt;polyfills.ts&lt;/h3&gt;
+            &lt;p&gt;크로스 브라우징을 위한 폴리필들을 임포트하는 역할을 한다. 자세한 내용은 &lt;a href=&quot;https://angular.io/guide/browser-support&quot; target=&quot;_blank&quot;&gt;Browser support&lt;/a&gt; 참조하기 바란다.&lt;/p&gt;
+            &lt;br&gt;&lt;blockquote&gt;
+                &lt;p&gt;&lt;strong&gt;폴리필 라이브러리 임포트&lt;/strong&gt;&lt;/p&gt;
+                &lt;p&gt; 폴리필? 구버전의 브라우저가 최신 스크립트 기능에 대응하도록 보완하는 라이브러리&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;core-js : ES6 지원을 위한 폴리필&lt;/li&gt;
+                    &lt;li&gt;zonde.js : 변화 감지를 위한 라이브러리&lt;/li&gt;
+                    &lt;li&gt;reflect-metadata : ES7 장식자 추가를 위한 폴리필&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/blockquote&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;h3&gt;styles.css&lt;/h3&gt;   
+            &lt;p&gt;애플리케이션 전역에 적용되는 글로벌 CSS 파일이다.&lt;/p&gt;
+        &lt;/li&gt;        
+        &lt;li&gt;
+            &lt;h3&gt;test.ts&lt;/h3&gt;
+            &lt;p&gt;유닛 테스트를 위한 메인 진입점이다.&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;h3&gt;tsconfig.{app|spec}.json&lt;/h3&gt;
+            &lt;p&gt;TypeScript 컴파일 옵션 설정 파일이다.&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;h3&gt;tslint.json&lt;/h3&gt;
+            &lt;p&gt;&lt;a href=&quot;https://palantir.github.io/tslint/&quot; target=&quot;_blank&quot;&gt;TSLint&lt;/a&gt;가 사용하는 구문 체크 설정 파일이다. ng lint 명령어 실행시 참조된다.&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;h3&gt;app/app.component.{css, html, spec.ts, ts}&lt;/h3&gt;
+            &lt;p&gt;처음 생성시에 만들어지는 모든 컴포넌트의 부모 컴포넌트인 루트 컴포넌트로 &lt;code&gt;app.module.ts&lt;/code&gt;에서 루트 컴포넌트를 바꿔줄 수 있다.
+                &lt;br&gt;컴포넌트를 구성하는 css, template, class, 유닛 테스트용 스펙 파일이다.
+                &lt;br&gt;아래는 &lt;code&gt;app.component.ts&lt;/code&gt; 파일의 소스로 templateUrl에 html파일을 styleUrls에 css파일을 등록해서 사용할 수 있다.
+            &lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'app-root'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;templateUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./app.component.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;styleUrls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./app.component.css'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AppComponent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+        &lt;/li&gt;       
+        &lt;li&gt;
+            &lt;h3&gt;app/app.module.ts&lt;/h3&gt;
+            &lt;p&gt;Angular 구성요소를 등록하는 루트 모듈이다.&lt;/p&gt;
+        &lt;/li&gt;       
+        &lt;li&gt;
+            &lt;h3&gt;assets/&lt;/h3&gt;
+            &lt;p&gt;정적 파일을 위한 폴더이다. (이미지, 폰트 등등)&lt;/p&gt;
+        &lt;/li&gt;      
+        &lt;li&gt;
+            &lt;h3&gt;environments/&lt;/h3&gt;
+            &lt;p&gt;프로젝트 빌드 시에 사용될 프로덕션용/개발용 환경 설정 파일이 담겨 있는 폴더이다.&lt;/p&gt;
+        &lt;/li&gt;       
+    &lt;/ul&gt;
+
+    &lt;h2&gt;&lt;li&gt; 그 외 폴더 및 파일  &lt;/li&gt;&lt;/h2&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;h3&gt;.editorconfig&lt;/h3&gt;
+            &lt;p&gt;코드 에디터 기본 설정 파일로 상세한 설정 방법은 &lt;a href=&quot;http://editorconfig.org&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;에 자세히 나와있다.&lt;/p&gt;
+        &lt;/li&gt;             
+        &lt;li&gt;
+            &lt;h3&gt;angular.json&lt;/h3&gt;
+            &lt;p&gt;Angular CLI를 위한 설정파일로 자세한 내용은 &lt;a href=&quot;https://github.com/angular/angular-cli/wiki/angular-workspace&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;에 자세히 나와있다.&lt;/p&gt;
+            &lt;p&gt;&lt;mark&gt;cf. 빌드시 포함될 전역 css, js 파일들을 설정할 수 있다.&lt;/mark&gt;&lt;/p&gt;
+        &lt;/li&gt;       
+        &lt;li&gt;
+            &lt;h3&gt;package.json&lt;/h3&gt;
+            &lt;p&gt;패키지 매니저(npm, yarn 등)가 사용하는 모듈 관리 파일이다.&lt;/p&gt;
+            &lt;p&gt;&lt;mark&gt;script&lt;/mark&gt; 항목은 커맨드 라인에서 명령어를 실행했을 때 수행되는 작업을 정의할 수 있다.&lt;/p&gt;
+            &lt;p&gt;&lt;mark&gt;dependencies&lt;/mark&gt; 항목은 어플리케이션이 배포되어 실행되는 환경에 필요한 서드파티 라이브러리나 툴 목록을 정의한다. &lt;/p&gt;
+            &lt;p&gt;&lt;mark&gt;devDependencies&lt;/mark&gt; 항목은 개발 환경에서만 필요한 서드파티 라이브러리나 툴 목록을 정의한다. &lt;/p&gt;
+        &lt;/li&gt;       
+        &lt;li&gt;
+            &lt;h3&gt;e2e/&lt;/h3&gt;
+            &lt;p&gt;e2e(end-to-end) 테스트 관련 파일을 위한 폴더이다.&lt;/p&gt;
+            &lt;p&gt; e2e 테스트를 위해 Protractor가 사용하는 설정 파일인 protractor.conf.js가 담겨 있다. ng e2e 명령어 실행시 참조된다.&lt;/p&gt;
+        &lt;/li&gt;       
+        &lt;li&gt;
+            &lt;h3&gt;node_modules/&lt;/h3&gt;
+            &lt;p&gt;패키지 매니저를 통해 install을 하면 package.json에 등록된 의존 모듈이 설치되는 의존 모듈 저장소이다.&lt;/p&gt;
+        &lt;/li&gt;       
+        &lt;!-- &lt;li&gt;
+            &lt;h3&gt;&lt;/h3&gt;
+            &lt;p&gt;&lt;/p&gt;
+        &lt;/li&gt;        --&gt;
+    &lt;/ul&gt;
+
+    &lt;h2&gt;&lt;li&gt;화면에 Hello World 출력&lt;/li&gt;&lt;/h2&gt;
+    &lt;p&gt;&lt;mark&gt;src/app/app.component.html&lt;/mark&gt;를 열고 Hello World 입력하고 실행시키면 끝!&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;../assets/images/hello wolrd.png&quot;/&gt;&lt;/p&gt;
+&lt;/ol&gt;
+
+
+
+&lt;h2&gt;Good Bye Chapter 02&lt;/h2&gt;
+&lt;p&gt;Next Chapter....&lt;/p&gt;
+&lt;blockquote&gt;
+    &lt;strong&gt;Chapter 03&lt;/strong&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Angular 애플리케이션의 구성 요소 알아보기&lt;/li&gt;
+        &lt;li&gt;모듈(Module), 컴포넌트(Component), 디렉티브(Directive), 데이터 바인딩 기초&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기 Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기</summary></entry><entry><title type="html">Angular Study Chapter 01 - CLI로 빠르게 시작하기</title><link href="https://ramsang0212.github.io/angular-study-01" rel="alternate" type="text/html" title="Angular Study Chapter 01 - CLI로 빠르게 시작하기" /><published>2018-06-06T17:00:00+09:00</published><updated>2018-06-06T17:00:00+09:00</updated><id>https://ramsang0212.github.io/angular-study-01</id><content type="html" xml:base="https://ramsang0212.github.io/angular-study-01">&lt;p&gt;
     &lt;h2 style=&quot;color: plum&quot; id=&quot;basictagging&quot;&gt;Angular 강좌 목록&lt;/h2&gt;
     &lt;ul class=&quot;table-of-contents-list&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter 01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;./angular-study-02&quot;&gt;Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/p&gt;
 
@@ -50,7 +266,7 @@
         &lt;li&gt;CLI로 만들어진 Angular 프로젝트 구조보기&lt;/li&gt;
         &lt;li&gt;간단하게 화면에 Hello World 찍어보기&lt;/li&gt;
     &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기</summary></entry><entry><title type="html">A Full and Comprehensive Style Test</title><link href="https://ramsang0212.github.io/a-full-and-comprehensive-style-test" rel="alternate" type="text/html" title="A Full and Comprehensive Style Test" /><published>2012-09-01T19:00:00+09:00</published><updated>2012-09-01T19:00:00+09:00</updated><id>https://ramsang0212.github.io/a-full-and-comprehensive-style-test</id><content type="html" xml:base="https://ramsang0212.github.io/a-full-and-comprehensive-style-test">&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>RamSang</name></author><category term="Angular" /><summary type="html">Angular 강좌 목록 Angular Study Chapter 01 - CLI로 빠르게 시작하기 Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기</summary></entry><entry><title type="html">A Full and Comprehensive Style Test</title><link href="https://ramsang0212.github.io/a-full-and-comprehensive-style-test" rel="alternate" type="text/html" title="A Full and Comprehensive Style Test" /><published>2012-09-01T19:00:00+09:00</published><updated>2012-09-01T19:00:00+09:00</updated><id>https://ramsang0212.github.io/a-full-and-comprehensive-style-test</id><content type="html" xml:base="https://ramsang0212.github.io/a-full-and-comprehensive-style-test">&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
 
 
 &lt;hr /&gt;

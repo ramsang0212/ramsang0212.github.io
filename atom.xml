@@ -8,12 +8,34 @@
     
       
       <item>
+        <title>Angular Study Chapter 02 - Angular 파일구조 및 화면에 Hello World 찍어보기</title>
+        
+          <description>&lt;p&gt;
+    &lt;h2 style=&quot;color: plum&quot; id=&quot;basictagging&quot;&gt;Angular 강좌 목록&lt;/h2&gt;
+    &lt;ul class=&quot;table-of-contents-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter 01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;./angular-study-02&quot;&gt;Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 15 Jun 2018 17:00:00 +0900</pubDate>
+        <link>
+        https://ramsang0212.github.io/angular-study-02</link>
+        <guid isPermaLink="true">https://ramsang0212.github.io/angular-study-02</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Angular Study Chapter 01 - CLI로 빠르게 시작하기</title>
         
           <description>&lt;p&gt;
     &lt;h2 style=&quot;color: plum&quot; id=&quot;basictagging&quot;&gt;Angular 강좌 목록&lt;/h2&gt;
     &lt;ul class=&quot;table-of-contents-list&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;./angular-study-01&quot;&gt;Angular Study Chapter 01 - CLI로 빠르게 시작하기&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;./angular-study-02&quot;&gt;Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/p&gt;
 
